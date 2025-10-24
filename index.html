@@ -1,52 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+  <link rel="stylesheet" href="stylesheet.css">
+  <script defer src="script.js"></script>
   <title>Frontend Mentor | Contact form</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
 </head>
+
 <body>
+  <main>
+    <h1 class="header">Contact Us</h1>
+    <form action="" name="query">
+      <section class="first-last-name-section">
+        <div class="first-name-section">
+          <label for="firstName">First Name <span class="asterisk">*</span></label>
+          <input type="text" name="firstName" id="firstName" class="input">
+          <p class="error">This field is required</p>
+        </div>
+        <div class="last-name-section">
+          <label for="lastName">Last Name <span class="asterisk">*</span></label>
+          <input type="text" name="lastName" id="lastName" class="input">
+          <p class="error">This field is required</p>
+        </div>
+      </section>
+      
+      <section class="email-section">
+        <label for="email">Email Address <span class="asterisk">*</span></label>
+        <input type="email" name="email" id="email" class="input">
+        <p class="error-email-invalid">Please enter a valid email address</p>
+        <p class="error">This field is required</p>
+      </section>
 
-  Contact Us
+      <section class="query-section">
+        <p class="query">Query Type <span class="asterisk">*</span></p>
+        <div class="queries-type-container">
+          <label for="enquiry">
+            <div class="enquiry">
+              <input type="radio" id="enquiry" name="queryType" value="General Enquiry">
+              <label for="enquiry">General Enquiry</label>
+            </div>
+          </label>
+          <label for="request">
+            <div class="request">
+              <input type="radio" id="request" name="queryType" value="Support Request">
+              <label for="request">Support Request</label>
+            </div>
+          </label>
+        </div>
+        <p class="error">Please select a query type</p>
+      </section>
 
-  First Name
-  This field is required
+      <section class="message-section">
+        <label for="message">Message <span class="asterisk">*</span></label>
+        <textarea name="message" id="message" class="input"></textarea>
+        <p class="error">This field is required</p>
+      </section>
 
-  Last Name
-  This field is required
+      <section class="consent-section">
+        <div class="input-label-container">
+          <input type="checkbox" id="consent" name="consent" class="input">
+          <label for="consent">I consent to being contacted by the team <span class="asterisk">*</span></label>
+        </div>
+        <p class="error">To submit this form, please consent to being contacted</p>
+      </section>
 
-  Email Address
-  Please enter a valid email address
-  This field is required
+      <button>Submit</button>
+    </form>
 
-  Query Type
-  General Enquiry
-  Support Request
-  Please select a query type
+    <div class="pop-up">
+      <section>
+        <img src="images/icon-success-check.svg" alt="check">
+        <p>Message Sent!</p>
+      </section>
+      <p>Thanks for completing the form. We'll be in touch soon!</p>
+    </div>
+  </main>
 
-  Message
-  This field is required
-
-  I consent to being contacted by the team
-  To submit this form, please consent to being contacted
-
-  Submit
-
-  Message Sent!
-  Thanks for completing the form. We'll be in touch soon!
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
 </body>
+
 </html>

@@ -1,0 +1,309 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap');
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  background-color: hsl(148, 38%, 91%);
+  font-family: "Karla", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+input,
+textarea {
+  max-width: 100%;
+  font-family: "Karla", sans-serif;
+  border: 1px solid hsl(186, 15%, 59%);
+  border-radius: 6px;
+  margin-top: .4rem;
+}
+
+main {
+  min-width: 300px;
+  max-width: 90%;
+  margin: 1rem 0;
+  background-color: white;
+  padding: 2rem;
+  border-radius: 12px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.header {
+  letter-spacing: -1px;
+  margin-bottom: 1.5rem;
+}
+
+.first-last-name-section {
+  display: flex;
+  gap: 1rem;
+}
+
+.first-last-name-section>div {
+  width: 100%;
+  max-width: 100%;
+}
+
+.first-last-name-section input {
+  padding-left: .8rem;
+  height: 2.6rem;
+}
+
+.first-name-section {
+  display: flex;
+  flex-direction: column;
+}
+
+#firstName {
+  width: 100%;
+}
+
+#firstName:hover {
+  border: 1.5px solid hsl(169, 82%, 27%);
+}
+
+#firstName:has(.error-required-visible) {
+  border-color: hsl(0, 66%, 54%);
+}
+
+.last-name-section {
+  display: flex;
+  flex-direction: column;
+}
+
+#lastName {
+  width: 100%;
+}
+
+#lastName:hover {
+  border: 1.5px solid hsl(169, 82%, 27%);
+}
+
+#lastName:has(.error-required-visible) {
+  border-color: hsl(0, 66%, 54%);
+}
+
+.email-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.email-section input {
+  padding-left: .8rem;
+  height: 2.6rem;
+}
+
+.email-section input:hover {
+  border: 1.5px solid hsl(169, 82%, 27%);
+}
+
+.queries-type-container {
+  display: flex;
+  gap: 1rem;
+  margin-top: .8rem;
+}
+
+.queries-type-container>label {
+  width: 100%;
+  max-width: 100%;
+}
+
+.enquiry,
+.request {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  width: 100%;
+  max-width: 100%;
+  border: 1px solid hsl(186, 15%, 59%);
+  border-radius: 6px;
+  padding: .6rem 1rem;
+}
+
+.queries-type-container input {
+  margin: 0;
+}
+
+.queries-type-container>label:hover,
+.queries-type-container>label *:hover {
+  cursor: pointer;
+}
+
+.message-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.message-section textarea {
+  width: 35rem;
+  min-height: 5rem;
+  padding: .6rem .8rem;
+  resize: none;
+}
+
+.message-section textarea:hover {
+  border: 1.5px solid hsl(169, 82%, 27%);
+}
+
+.message-section textarea:has(.error-required-visible) {
+  border-color: hsl(0, 66%, 54%);
+}
+
+.consent-section {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem 0;
+}
+
+.input-label-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.consent-section input {
+  margin: 0;
+  border-radius: 0;
+  accent-color: hsl(169, 82%, 27%);
+}
+
+.consent-section input:hover {
+  cursor: pointer;
+}
+
+.consent-section label {
+  font-size: 13px;
+}
+
+.consent-section label:hover {
+  cursor: pointer;
+}
+
+button {
+  font-family: "Karla", sans-serif;
+  background-color: hsl(169, 82%, 27%);
+  color: white;
+  border: none;
+  padding: 1rem;
+  border-radius: 6px;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: hsl(187, 24%, 22%);
+}
+
+.asterisk {
+  color: hsl(169, 82%, 27%);
+}
+
+.pop-up {
+  background-color: hsl(187, 24%, 22%);
+  color: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: none;
+}
+
+.pop-up section {
+  display: flex;
+  gap: .6rem;
+  margin-bottom: .6rem;
+}
+
+.pop-up section p {
+  font-weight: 500;
+}
+
+.pop-up section+p {
+  opacity: 80%;
+}
+
+/* 
+
+Effects
+
+*/
+
+.message-section textarea:focus,
+.first-last-name-section input:focus,
+.email-section input:focus {
+  outline: none;
+  border: 1.5px solid hsl(169, 82%, 27%);
+}
+
+.error,
+.error-email-invalid,
+.error-required-visible,
+.error-invalid-visible {
+  margin-top: .4rem;
+  font-size: 12px;
+  color: hsl(0, 66%, 54%);
+}
+
+.error,
+.error-email-invalid {
+  display: none;
+}
+
+.error-invalid-visible {
+  display: block;
+}
+
+.error-required-visible {
+  display: block;
+}
+
+.queries-type-container div:has(input[type="radio"]:checked) {
+  background-color: hsl(148, 38%, 91%);
+  border-color: hsl(169, 82%, 27%);
+}
+
+.pop-up-visible{
+  display: block;
+}
+
+/* 
+
+
+
+media queries
+
+
+
+*/
+
+@media screen and (max-width: 600px) {
+
+  .first-last-name-section {
+    flex-direction: column;
+  }
+
+  .queries-type-container {
+    flex-direction: column;
+  }
+
+  .message-section textarea {
+    min-height: 15rem;
+  }
+
+  .pop-up-visible {
+    gap: 1rem;
+  }
+}
